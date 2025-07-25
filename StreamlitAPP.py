@@ -53,7 +53,6 @@ if button and uploaded_file is not None and mcq_count and subject and tone:
             st.error("Something went wrong while generating the quiz.")
 
         else:
-            # ✅ Debug info
             print(f"Total Tokens: {cb.total_tokens}")
             print(f"Prompt Tokens: {cb.prompt_tokens}")
             print(f"Completion Tokens: {cb.completion_tokens}")
@@ -76,8 +75,8 @@ if button and uploaded_file is not None and mcq_count and subject and tone:
                         # Show review (if any)
                         st.text_area(label="Review", value=response.get("review", ""))
                     else:
-                        st.error("⚠️ Could not format quiz data into table.")
+                        st.error("Could not format quiz data into table.")
                 else:
-                    st.error("⚠️ No quiz data found in the response.")
+                    st.error("No quiz data found in the response.")
             else:
                 st.write(response)
